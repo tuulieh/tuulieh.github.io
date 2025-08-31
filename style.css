@@ -8,9 +8,10 @@
     color: white;
 }
 
-/* navin linkin väri */
+/* navin linkkien väri ja lihavointi */
 .navbar-custom .navbar-nav .nav-link {
     color: white;
+    font-weight: bold;
 }
 
 /* navin aktiivisen ja hover-linkin väri (pidetään valkoisena) */
