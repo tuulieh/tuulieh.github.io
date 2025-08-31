@@ -1,14 +1,14 @@
 {
     "nimi": "Digitekniikat",
-    "opintopisteet": "5",
-    "osallistujien nimet": [
+    "osallistujien_maara": "5 kpl",
+    "osallistujien_nimet": [
         "Harry Potter",
         "Ronald Weasley",
         "Hermione Granger",
         "Vincent Grabbe",
         "Draco Malfoy"
     ],
-    "toteutuksen alkamis- ja loppumisaika": "18.8.-10.10.2025",
-    "toteutuksen kesto viikkoina": "8",
+    "tot_alk_lop": "18.8.-10.10.2025",
+    "tot_kesto": "8 viikkoa",
     "kuva": "https://www.uusiteknologia.fi/wp-content/uploads/2024/01/McKinsey_kuvituskuva_digi_2024_www-991x509.jpg"
 }

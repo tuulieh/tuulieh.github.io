@@ -48,8 +48,48 @@
         </nav>
 
         <div class="main-content container">
-            <h1>JSON-datan käsittelyä </h1>
-            <p>XX</p>
+
+            <div id="vastaus"></div>
+
+            <script>
+
+                fetch('https://tuulieh.github.io/json/toteutus.JSON')
+
+                    .then(function (response) {
+                        return response.json();
+                    })
+
+                    .then(function (responseJson) {
+                        kerro(responseJson);
+                    })
+
+                    .catch(function (error) {
+                        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+                    })
+
+                function kerro(obj) {
+
+                    let tiedot = "<h1>" + obj.nimi + "</h1><br>"
+                        + "<p>" + obj.opintojakso.nimi + "<br>"
+                        + "Tunnus: " + obj.opintojakso.tunnus + "<br>"
+                        + "Opintopisteet: " + obj.opintojakso.opintopisteet + "<br>"
+                        + "<p><img src=" + obj.kuva + "></p>"
+
+                    tiedot += "<p><h3> Aiheet </h3>";
+
+
+                    for (var i = 0; i < obj.tekniikat.length; i++) {
+                        tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";
+                        tiedot += " <a href=" + obj.tekniikat[i].linkki + ">" + obj.tekniikat[i].linkki + "</a>" + "<br>";
+                    }
+
+                    tiedot += "</p>";
+                    document.getElementById("vastaus").innerHTML = tiedot;
+
+                }
+
+            </script>
+
         </div>
 
     </main>
