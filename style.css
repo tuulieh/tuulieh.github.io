@@ -1,0 +1,149 @@
+/* navin taustan väri */
+.navbar-custom {
+    background-color: rgba(93, 198, 247);
+}
+
+/* navin tekstin väri */
+.navbar-custom .navbar-text {
+    color: white;
+}
+
+/* navin linkin väri */
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+}
+
+/* navin aktiivisen ja hover-linkin väri (pidetään valkoisena) */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: white;
+}
+
+/* navin aktiivisen sivun korostus */
+.navbar-custom .nav-link.active {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* logotekstin fontti, koko, väri ja keskitys pystysuunnassa */
+.navbar-custom .navbar-brand {
+    font-family: 'Cherry Bomb One', system-ui, sans-serif;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* logokuvan ja tekstin väli */
+.navbar-custom .navbar-brand img {
+    margin-right: 8px;
+}
+
+/* dropdown menu vaihtoehtojen taustaväri hoverissa */
+.nav-item .dropdown-menu a:hover {
+    color: white !important;
+    background: rgba(93, 198, 247) !important;
+    cursor: pointer;
+}
+
+/* otsikon tyyli */
+.container h1 {
+    font-family: 'Cherry Bomb One', system-ui, sans-serif;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    padding: 10px;
+}
+
+/* otsikon fonttikoko pienillä näytöillä */
+@media (max-width: 600px) {
+    .container h1 {
+        font-size: 30px;
+    }
+}
+
+/* pienemmän otsikon tyyli */
+.container h2 {
+    font-family: 'Cherry Bomb One', system-ui, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #515151;
+}
+
+/* leipätekstin tyyli */
+.container p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* karusellin leveysrajoitus */
+#carousel {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* karusellin tekstien piilotus pienillä näytöillä */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/* karusellin tekstiosion tausta */
+.carousel-caption {
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+/* footerin tausta ja sisäiset marginaalit */
+.footer-custom {
+    background-color: rgba(93, 198, 247);
+    padding: 15px 120px;
+    width: 100%;
+}
+
+/* footerin sisällön keskitys flexboxilla */
+.footer-inner {
+    display: flex;
+    align-items: center;
+}
+
+/* footerin tekstin tyyli */
+.footer-text {
+    margin: 0;
+    color: white;
+    font-size: 12px;
+}
+
+/* footerin sometilien keskitys oikealle */
+.footer-social {
+    margin-left: auto;
+}
+
+/* footerin sometilien linkit ja välistys */
+.footer-social a {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/* footerin responsiivisuus pienillä näytöillä */
+@media (max-width: 600px) {
+    .footer-custom {
+        padding: 15px 20px;
+    }
+}
+
+/* sisältöalueen ja footerin välinen tila */
+.main-content {
+    margin-bottom: 40px;
+}
