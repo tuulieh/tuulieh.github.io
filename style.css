@@ -14,7 +14,7 @@
     font-weight: bold;
 }
 
-/* navin aktiivisen ja hover-linkkien väri (pidetään valkoisena) */
+/* navin aktiivisen ja hover-linkkien väri pysyy valkoisena */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: white;
@@ -81,6 +81,24 @@
     margin-top: 20px;
     margin-bottom: 40px;
     line-height: 1.8;
+}
+
+/* haitarin taustaväri pysyy valkoisena */
+.accordion-button {
+    background-color: white !important;
+}
+
+/* haitarin otsikot */
+.accordion-button {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* valitun haitarin otsikon rajaus */
+.accordion-button:focus,
+.accordion-button:active {
+    box-shadow: 0 0 0 0.25rem rgba(93, 198, 247, 0.5);
+    outline: none;
 }
 
 /* karusellin leveysrajoitus */

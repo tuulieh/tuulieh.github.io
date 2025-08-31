@@ -66,34 +66,43 @@
 
             <!-- Haitari-->
             <!-- Sisältää gridin kuvalle ja tekstille, col-luokat tekevät asettelusta responsiivisen -->
-            <div id="accordion">
-                <div class="card">
+            <div class="accordion" id="accordionExample">
 
-                    <div class="card-header">
-                        <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingOne">
+                        <!-- Ensimmäinen vaihe ei ole automaattisesti auki -->
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             Yhteydenotto
-                        </a>
-                    </div>
-                    <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
-                        <div class="row align-items-center">
-                            <div class="col-2 col-md-1">
-                                <img src="kuvat/yksi.PNG" alt="yksi" class="img-fluid rounded m-3">
-                            </div>
-                            <div class="col-10 col-md-11 p-3">
-                                Katso ensin nettisivuiltamme kotia etsivät eläimet. Ota meihin yhteyttä lomakkeen
-                                kautta, sähköpostitse tai puhelimitse, jos olet kiinnostunut adoptoimaan eläimen. Kerro
-                                lyhyesti itsestäsi ja siitä, millaista kotia tarjoat.
+                        </button>
+                    </h5>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row align-items-center">
+                                <div class="col-2 col-md-1">
+                                    <img src="kuvat/yksi.PNG" alt="yksi" class="img-fluid rounded m-3">
+                                </div>
+                                <div class="col-10 col-md-11 p-3">
+                                    Katso ensin nettisivuiltamme kotia etsivät eläimet. Ota meihin yhteyttä lomakkeen
+                                    kautta, sähköpostitse tai puhelimitse, jos olet kiinnostunut adoptoimaan eläimen.
+                                    Kerro lyhyesti itsestäsi ja siitä, millaista kotia tarjoat.
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
-                                Selvitys ja haastattelu
-                            </a>
-                        </div>
-                        <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Selvitys ja haastattelu
+                        </button>
+                    </h5>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
                             <div class="row align-items-center">
                                 <div class="col-2 col-md-1">
                                     <img src="kuvat/kaksi.PNG" alt="kaksi" class="img-fluid rounded m-3">
@@ -104,29 +113,33 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
-                                    Päätöksenteko
-                                </a>
-                            </div>
-                            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-                                <div class="row align-items-center">
-                                    <div class="col-2 col-md-1">
-                                        <img src="kuvat/kolme.PNG" alt="kolme" class="img-fluid rounded m-3">
-                                    </div>
-                                    <div class="col-10 col-md-11 p-3">
-                                        Kun kaikki tiedot on kerätty, teemme päätöksen adoptiosta. Saat tiedon nopeasti
-                                        ja yhdessä sovimme seuraavat askeleet, jotta eläin pääsee turvallisesti uuteen
-                                        kotiinsa.
-                                    </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Päätöksenteko
+                        </button>
+                    </h5>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row align-items-center">
+                                <div class="col-2 col-md-1">
+                                    <img src="kuvat/kolme.PNG" alt="kolme" class="img-fluid rounded m-3">
+                                </div>
+                                <div class="col-10 col-md-11 p-3">
+                                    Kun kaikki tiedot on kerätty, teemme päätöksen adoptiosta. Saat tiedon nopeasti ja
+                                    yhdessä sovimme seuraavat askeleet, jotta eläin pääsee turvallisesti uuteen
+                                    kotiinsa.
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+
             </div>
         </div>
 
