@@ -3,7 +3,7 @@
     background-color: rgba(93, 198, 247);
 }
 
-/* navin tekstin väri */
+/* navin tekstien väri */
 .navbar-custom .navbar-text {
     color: white;
 }
@@ -14,7 +14,7 @@
     font-weight: bold;
 }
 
-/* navin aktiivisen ja hover-linkin väri (pidetään valkoisena) */
+/* navin aktiivisen ja hover-linkkien väri (pidetään valkoisena) */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: white;
