@@ -1,0 +1,25 @@
+/* navin taustan väri */
+.navbar-custom {
+    background-color: rgba(93, 198, 247);
+}
+
+/* navin linkkien ja logon fontti, väri, lihavointi ja koko */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* navin aktiivisen ja hover-linkkien väri pysyy valkoisena */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: white;
+}
+
+/* footerin tausta ja sisäiset marginaalit */
+.footer-custom {
+    background-color: rgba(93, 198, 247);
+    padding: 15px 120px;
+    width: 100%;
+}
