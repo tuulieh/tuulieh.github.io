@@ -54,10 +54,10 @@
 
             <script>
 
-                //Haetaan json-tietue               
-                fetch('https://tuulieh.github.io/json/tietue.JSON')
+                //Haetaan json-tietue  
+                fetch('https://tuulieh.github.io/json/toteutus.JSON')
 
-                    //Muunnetaan json-muotoon    
+                    //Muunnetaan json-muotoon 
                     .then(function (response) {
                         return response.json();
                     })
@@ -75,19 +75,12 @@
                 //Kirjoitetaan haettu data halutulla tavalla html-sivulle
                 function kerro(obj) {
 
-                    let tiedot = "<h1>" + obj.otsikko + "</h1><br>" + obj.kuvaus + "<br><hr>"
-                        + "<p><img src=" + obj.kuva + "></p>"
-                        + "<h3>" + "Opintojakso" + "</h3>" + "Nimi: " + obj.opintojakso.nimi + "<br>"
-                        + "Tunnus: " + obj.opintojakso.tunnus + "<br>"
-                        + "Opintopisteet: " + obj.opintojakso.opintopisteet + "<br>"
-
-                    tiedot += "<p><h3> Aiheet </h3>";
-
-                    //Haetaan taulukon sisällä olevat tiedot for-silmukalla
-                    for (var i = 0; i < obj.tekniikat.length; i++) {
-                        tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";
-                        tiedot += " <a href=" + obj.tekniikat[i].linkki + ">" + obj.tekniikat[i].linkki + "</a>" + "<br>";
-                    }
+                    let tiedot = "<h1>" + obj.nimi + "</h1><br>"
+                        + "<p>" + obj.osallistujien_maara + "<br><br>"
+                        + obj.osallistujien_nimet.join(", ") + "<br><br>"
+                        + obj.tot_alk_lop + "<br><br>"
+                        + obj.tot_kesto + "<br><br>"
+                        + "<img src=" + obj.kuva + "></p>"
 
                     tiedot += "</p>";
                     document.getElementById("vastaus").innerHTML = tiedot;

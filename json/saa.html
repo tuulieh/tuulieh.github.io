@@ -28,19 +28,19 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Etusivu (Tehtävä 1 Osa 1)</a>
+                            <a class="nav-link" href="index.html">Tehtävä 1 Osa 1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="teht1osa2.html">Tehtävä 1 Osa 2</a>
+                            <a class="nav-link" href="toteutus.html">Tehtävä 1 Osa 2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="teht2osa1.html">Tehtävä 2 Osa 1</a>
+                            <a class="nav-link" href="poke.html">Tehtävä 2 Osa 1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="teht2osa2.html">Tehtävä 2 Osa 2</a>
+                            <a class="nav-link" href="poke2.html">Tehtävä 2 Osa 2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="teht3.html">Tehtävä 3</a>
+                            <a class="nav-link" href="saa.html">Tehtävä 3</a>
                         </li>
                     </ul>
                 </div>
@@ -48,42 +48,45 @@
         </nav>
 
         <div class="main-content container">
+            <h1>Sää Helsingissä </h1><br>
 
+            <!-- Tulostetaan alle json scriptin tulos-->
             <div id="vastaus"></div>
 
             <script>
 
-                fetch('https://tuulieh.github.io/json/toteutus.JSON')
+                //Haetaan json-tietue  
+                fetch('https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric')
 
+                    //Muunnetaan json-muotoon 
                     .then(function (response) {
                         return response.json();
                     })
 
+                    //Käsitellään muunnettu json-muotoinen vastaus
                     .then(function (responseJson) {
                         kerro(responseJson);
                     })
 
+                    //Viesti jos haussa tapahtui virhe
                     .catch(function (error) {
                         document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
                     })
 
+                //Kirjoitetaan haettu data halutulla tavalla html-sivulle
                 function kerro(obj) {
 
-                    let tiedot = "<h1>" + obj.nimi + "</h1><br>"
-                        + "<p>" + obj.opintojakso.nimi + "<br>"
-                        + "Tunnus: " + obj.opintojakso.tunnus + "<br>"
-                        + "Opintopisteet: " + obj.opintojakso.opintopisteet + "<br>"
-                        + "<p><img src=" + obj.kuva + "></p>"
+                    //Aika nyt
+                    var aika = new Date();
+                    var tunnit = aika.getHours();
+                    var minuutit = aika.getMinutes();
 
-                    tiedot += "<p><h3> Aiheet </h3>";
+                    let tiedot = "<p>Sää kello: " + tunnit + ":" + minuutit + "<br>"
+                        + "<h3>Sää: </h3><h5>" + obj.weather[0].description + "</h5><br>"
+                        + "<h3>Lämpötila: </h3><h5>" + obj.main.temp + "&degC</h5><br>"
+                        + "<h3>Tuuli: </h3><h5>" + obj.wind.speed + " m/s</h5><br>"
+                        + "<img src='http://openweathermap.org/img/wn/" + obj.weather[0].icon + ".png'><br><br></p>"
 
-
-                    for (var i = 0; i < obj.tekniikat.length; i++) {
-                        tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";
-                        tiedot += " <a href=" + obj.tekniikat[i].linkki + ">" + obj.tekniikat[i].linkki + "</a>" + "<br>";
-                    }
-
-                    tiedot += "</p>";
                     document.getElementById("vastaus").innerHTML = tiedot;
 
                 }

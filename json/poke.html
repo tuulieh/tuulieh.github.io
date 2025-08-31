@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+
+    <title>JSON-datan käsittelyä</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap-linkitys-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tyylitiedosto-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <!-- Responsiivinen navigaatiopalkki-->
+        <nav class="navbar navbar-expand-sm navbar-custom">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Tehtävä 1 Osa 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="toteutus.html">Tehtävä 1 Osa 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="poke.html">Tehtävä 2 Osa 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="poke2.html">Tehtävä 2 Osa 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="saa.html">Tehtävä 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-content container">
+            <h1>Pokemon-haku</h1><br>
+            <p><input type="text" id="pokemonName" placeholder="Enter Pokemon name">
+                <button onclick="poke()">Hae</button>
+            </p>
+
+            <!-- Tulostetaan alle json-scriptin tulos-->
+            <div id="nimi">Kirjoita laatikkoon Pokemonin nimi</div>
+            <p id="kuva2"></p>
+
+            <script>
+
+                // Kutsutaan kun painetaan Hae-nappia
+                function poke() {
+                    // Tallennetaan annettu nimi muuttujaan pokeName ja muutetaan pieniksi kirjaimiksi
+                    const pokeName = document.getElementById("pokemonName").value.toLowerCase();
+                    // Talletaan annettu nimi muuttujaan name
+                    let name = document.getElementById("pokemonName").value;
+
+                    // Haetaan json-tietue
+                    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+
+                        //Muunnetaan json-muotoon     
+                        .then(function (response) {
+                            return response.json();
+                        })
+
+                        //Käsitellään muunnettu json-muotoinen vastaus
+                        .then(function (responseJson) {
+                            pokekuva(responseJson);
+                        })
+
+                        //Viesti jos haussa tapahtui virhe
+                        .catch(function (error) {
+                            document.getElementById("nimi").innerHTML =
+                                "<p>Tietoa ei pystytä hakemaan</p>";
+                        });
+
+                    // Kirjoitetaan haettu data halutulla tavalla html-sivulle
+                    function pokekuva(obj) {
+
+                        // Tallennetaan muuttujan linkki josta Poken kuva löytyy
+                        let pokeurl = obj.sprites.front_default;
+
+                        // Kirjoitetaan kuva ja nimi sekä tyhjennetään hakukenttä
+                        document.getElementById("kuva2").innerHTML = "<img src=" + pokeurl + ">";
+                        document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+                        document.getElementById("pokemonName").value = "";
+                    }
+                }
+
+            </script>
+
+        </div>
+
+    </main>
+
+    <!-- Footer-->
+    <footer class=" footer-custom">
+    </footer>
+
+</body>
+
+</html>
