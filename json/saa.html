@@ -48,6 +48,7 @@
         </nav>
 
         <div class="main-content container">
+            
             <h1>Sää Helsingissä </h1><br>
 
             <!-- Tulostetaan alle json scriptin tulos-->
@@ -81,11 +82,13 @@
                     var tunnit = aika.getHours();
                     var minuutit = aika.getMinutes();
 
+                    let iconurl = "http://openweathermap.org/img/wn/" + obj.weather[0].icon + ".png";
+
                     let tiedot = "<p>Sää kello: " + tunnit + ":" + minuutit + "<br>"
                         + "<h3>Sää: </h3><h5>" + obj.weather[0].description + "</h5><br>"
                         + "<h3>Lämpötila: </h3><h5>" + obj.main.temp + "&degC</h5><br>"
                         + "<h3>Tuuli: </h3><h5>" + obj.wind.speed + " m/s</h5><br>"
-                        + "<img src='http://openweathermap.org/img/wn/" + obj.weather[0].icon + ".png'><br><br></p>"
+                        + "<img src=" + iconurl + "><br><br></p>";
 
                     document.getElementById("vastaus").innerHTML = tiedot;
 

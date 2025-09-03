@@ -48,6 +48,7 @@
         </nav>
 
         <div class="main-content container">
+
             <h1>Pokemon-haku</h1><br>
             <p><input type="text" id="pokemonName" placeholder="Enter Pokemon name">
                 <button onclick="poke()">Hae</button>
@@ -61,8 +62,10 @@
 
                 // Kutsutaan kun painetaan Hae-nappia
                 function poke() {
+
                     // Tallennetaan annettu nimi muuttujaan pokeName ja muutetaan pieniksi kirjaimiksi
                     const pokeName = document.getElementById("pokemonName").value.toLowerCase();
+
                     // Talletaan annettu nimi muuttujaan name
                     let name = document.getElementById("pokemonName").value;
 
@@ -81,8 +84,7 @@
 
                         //Viesti jos haussa tapahtui virhe
                         .catch(function (error) {
-                            document.getElementById("nimi").innerHTML =
-                                "<p>Tietoa ei pystytä hakemaan</p>";
+                            document.getElementById("nimi").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
                         });
 
                     // Kirjoitetaan haettu data halutulla tavalla html-sivulle
