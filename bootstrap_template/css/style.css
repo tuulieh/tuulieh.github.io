@@ -85,6 +85,9 @@
     background: var(--bs-primary);
 }
 
+/*** Button End ***/
+
+/* Layout & Spacing Overrides Start */
 .pt-6 {
     padding-top: 60px;
 }
@@ -153,6 +156,8 @@
         padding-top: 25px;
     }
 }
+
+/* Layout & Spacing Overrides End */
 
 /*** Navbar Start ***/
 .nav-section {
