@@ -547,10 +547,10 @@
                                     we&#8217;re
                                     not in the same place physically, below is a random joke for you!
                                 </p>
-                                <!-- Joke printed here -->
+                                <!-- JSON joke printed here -->
                                 <div id="joke"></div>
                                 <script>
-                                    // Function to fetch and display joke
+                                    // Function to fetch and display JSON joke
                                     function getJoke() {
                                         fetch('https://v2.jokeapi.dev/joke/Any?lang=en&type=single&blacklistFlags=nsfw,religious,political,racist,sexist,explicit')
                                             .then(function (response) {
@@ -563,7 +563,7 @@
                                                 document.getElementById("joke").innerHTML = "<p>Unable to fetch a joke.</p>";
                                             });
                                     }
-                                    // Function to render joke
+                                    // Function to render JSON joke
                                     function tell(obj) {
                                         let output = "";
                                         if (obj.type === "single" && obj.joke) {
@@ -573,10 +573,10 @@
                                         }
                                         document.getElementById("joke").innerHTML = output;
                                     }
-                                    // Fetch first joke on page load
+                                    // Fetch first JSON joke on page load
                                     getJoke();
                                 </script>
-                                <!-- Button generating new joke -->
+                                <!-- Button generating new JSON joke -->
                                 <button onclick="getJoke()" class="btn btn-primary py-2 px-4">
                                     <i class="fas fa-grin-tears me-3"></i>Generate new!
                                 </button>
@@ -762,7 +762,7 @@
                                 </div>
                                 <div class="col-xl-7 wow fadeInUp" data-wow-delay="0.3s">
                                     <div>
-                                        <!-- Contact form placeholder, doesn't really send data anywhere -->
+                                        <!-- Contact form placeholder, doesn't send data anywhere -->
                                         <form id="contactForm">
                                             <div class="row g-3">
                                                 <div class="col-lg-12 col-xl-6">
